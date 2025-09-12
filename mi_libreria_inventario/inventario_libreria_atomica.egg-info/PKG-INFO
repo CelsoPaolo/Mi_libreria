@@ -1,0 +1,9 @@
+Metadata-Version: 2.4
+Name: inventario-libreria-atomica
+Version: 0.1
+Summary: Una librería para cálculos atómicos de inventario.
+Author: Celso Paolo
+Requires-Python: >=3.6
+Dynamic: author
+Dynamic: requires-python
+Dynamic: summary

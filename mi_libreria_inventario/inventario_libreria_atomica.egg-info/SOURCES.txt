@@ -1,0 +1,7 @@
+setup.py
+inventario_libreria/__init__.py
+inventario_libreria/inventario.py
+inventario_libreria_atomica.egg-info/PKG-INFO
+inventario_libreria_atomica.egg-info/SOURCES.txt
+inventario_libreria_atomica.egg-info/dependency_links.txt
+inventario_libreria_atomica.egg-info/top_level.txt
