@@ -1,0 +1,62 @@
+[
+    {
+        "nombre": "Camiseta",
+        "cantidad": 50,
+        "precio": 15.00,
+        "veces_vendido": 120
+    },
+    {
+        "nombre": "Pantalón",
+        "cantidad": 20,
+        "precio": 45.50,
+        "veces_vendido": 50
+    },
+    {
+        "nombre": "Calcetines",
+        "cantidad": 5,
+        "precio": 5.00,
+        "veces_vendido": 10
+    },
+    {
+        "nombre": "Chamarra de cuero",
+        "cantidad": 8,
+        "precio": 120.00,
+        "veces_vendido": 25
+    },
+    {
+        "nombre": "Sudadera con capucha",
+        "cantidad": 15,
+        "precio": 30.00,
+        "veces_vendido": 70
+    },
+    {
+        "nombre": "Zapatillas deportivas",
+        "cantidad": 12,
+        "precio": 85.00,
+        "veces_vendido": 35
+    },
+    {
+        "nombre": "Gorra de béisbol",
+        "cantidad": 3,
+        "precio": 10.00,
+        "veces_vendido": 5
+    },
+    {
+        "nombre": "Bufanda de lana",
+        "cantidad": 25,
+        "precio": 20.00,
+        "veces_vendido": 65
+    },
+    {
+        "nombre": "Jeans ajustados",
+        "cantidad": 40,
+        "precio": 55.00,
+        "veces_vendido": 150
+    },
+    {
+        "nombre": "Vestido de noche",
+        "cantidad": 2,
+        "precio": 250.00,
+        "veces_vendido": 1
+    }
+]
