@@ -29,7 +29,7 @@ pip install inventario-libreria
 
 Ejemplos de Uso
 ```markdown
-Ejemplos de Uso
+
 
 1.  **Cargar el inventario desde un archivo JSON**:
     ```python
@@ -63,7 +63,7 @@ Ejemplos de Uso
 
     print(f"Los 3 productos más vendidos son: {productos_mas_vendidos}")
     ```
-
+```
 # Quiénes podrían usar esta librería y por qué
 
 Esta librería es una herramienta de gestión de inventario simple y modular. Es ideal para:
