@@ -64,10 +64,20 @@ Ejemplos de Uso
     print(f"Los 3 productos más vendidos son: {productos_mas_vendidos}")
     ```
 
-## Contribuciones
+# Quiénes podrían usar esta librería y por qué
 
-Si deseas contribuir, puedes hacerlo a través de mi repositorio en GitHub. ¡Toda contribución es bienvenida!
+Esta librería es una herramienta de gestión de inventario simple y modular. Es ideal para:
 
-## Licencia
+* **Desarrolladores** principiantes: Es un excelente proyecto para aprender sobre la estructura de una librería, el uso de clases y la implementación de pruebas unitarias.
 
-Este proyecto está bajo la Licencia MIT.
+* **Pequeños negocios**: Puede ser utilizada como una solución rápida para gestionar inventarios sencillos sin la complejidad de un software comercial.
+
+* **Analistas de datos**: Ofrece una base para prototipar ideas o para manejar pequeños conjuntos de datos de inventario.
+
+# ¿Para qué les serviría?
+
+* **Gestión eficiente**: Permite llevar un control sencillo del stock y las ventas de productos de manera programática.
+
+* **Toma de decisiones**: Ayuda a identificar rápidamente productos con bajo stock o los más populares.
+
+* **Automatización**: La librería puede ser integrada en scripts para automatizar reportes o alertas de inventario.
