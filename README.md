@@ -81,3 +81,6 @@ Esta librería es una herramienta de gestión de inventario simple y modular. Es
 * **Toma de decisiones**: Ayuda a identificar rápidamente productos con bajo stock o los más populares.
 
 * **Automatización**: La librería puede ser integrada en scripts para automatizar reportes o alertas de inventario.
+
+
+![agregando captura](Captura%20de%20pantalla%202025-09-20%20211544.png)
