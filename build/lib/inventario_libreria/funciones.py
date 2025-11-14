@@ -1,77 +1,56 @@
 from .estructuras import ListaEnlazada, Producto
+from typing import List
+
+def cargar_inventario(ruta_archivo: str) -> ListaEnlazada:
+    """
+    Carga el inventario desde un archivo JSON.
+    
+    Args:
+        ruta_archivo: Ruta al archivo JSON
+        
+    Returns:
+        ListaEnlazada con los productos cargados
+        
+    Raises:
+        FileNotFoundError: Si el archivo no existe
+        ValueError: Si el formato del JSON es inválido
+    """
+    import json
+    from .builders import construir_desde_json
+    
+    inventario = construir_desde_json(ruta_archivo)
+    if inventario is None:
+        raise FileNotFoundError(f"No se pudo cargar el archivo: {ruta_archivo}")
+    return inventario
 
 def calcular_valor_total(inventario: ListaEnlazada) -> float:
+    """Calcula el valor total del inventario usando iteración."""
+    return sum(producto.cantidad * producto.precio for producto in inventario)
+
+def obtener_stock_bajo(inventario: ListaEnlazada, umbral: int = 10) -> List[Producto]:
+    """Obtiene productos con stock bajo usando iteración."""
+    return [p for p in inventario if p.cantidad < umbral]
+
+def obtener_productos_mas_caros(inventario: ListaEnlazada, n: int = 5) -> List[Producto]:
+    """Obtiene los N productos más caros."""
+    productos_ordenados = sorted(inventario, key=lambda p: p.precio, reverse=True)
+    return productos_ordenados[:n]
+
+def obtener_productos_mas_vendidos(inventario: ListaEnlazada, n: int = 5) -> List[Producto]:
+    """Obtiene los N productos más vendidos."""
+    productos_ordenados = sorted(inventario, key=lambda p: p.veces_vendido, reverse=True)
+    return productos_ordenados[:n]
+
+def vender_producto(inventario: ListaEnlazada, nombre: str, cantidad: int = 1) -> bool:
     """
-    Calcula el valor total del inventario.
-
-    Args:
-        inventario: La lista enlazada con los productos.
-
-    Returns:
-        El valor total del inventario.
-    """
-    valor_total = 0.0
-    actual = inventario.cabeza
-    while actual:
-        valor_total += actual.producto.cantidad * actual.producto.precio
-        actual = actual.siguiente
-    return valor_total
-
-def obtener_stock_bajo(inventario: ListaEnlazada, umbral: int) -> list[Producto]:
-    """
-    Obtiene una lista de productos con un stock por debajo de un umbral dado.
-
-    Args:
-        inventario: La lista enlazada con los productos.
-        umbral: El valor umbral para considerar el stock como bajo.
-
-    Returns:
-        Una lista de objetos Producto.
-    """
-    productos_bajos = []
-    actual = inventario.cabeza
-    while actual:
-        if actual.producto.cantidad < umbral:
-            productos_bajos.append(actual.producto)
-        actual = actual.siguiente
-    return productos_bajos
-
-def obtener_productos_mas_caros(inventario: ListaEnlazada, n: int) -> list[Producto]:
-    """
-    Obtiene los N productos más caros del inventario.
-
-    Args:
-        inventario: La lista enlazada con los productos.
-        n: El número de productos más caros a retornar.
-
-    Returns:
-        Una lista de los N objetos Producto más caros.
-    """
-    productos = []
-    actual = inventario.cabeza
-    while actual:
-        productos.append(actual.producto)
-        actual = actual.siguiente
+    Registra una venta de producto.
     
-    productos.sort(key=lambda p: p.precio, reverse=True)
-    return productos[:n]
-
-def obtener_productos_mas_vendidos(inventario: ListaEnlazada, n: int) -> list[Producto]:
-    """
-    Obtiene los N productos más vendidos del inventario.
-
-    Args:
-        inventario: La lista enlazada con los productos.
-        n: El número de productos más vendidos a retornar.
-
     Returns:
-        Una lista de los N objetos Producto más vendidos.
+        True si la venta fue exitosa, False si no hay suficiente stock
     """
-    productos = []
-    actual = inventario.cabeza
-    while actual:
-        productos.append(actual.producto)
-        actual = actual.siguiente
-    
-    productos.sort(key=lambda p: p.veces_vendido, reverse=True)
-    return productos[:n]
+    producto = inventario.obtener_producto(nombre)
+    if producto and producto.cantidad >= cantidad:
+        producto.cantidad -= cantidad
+        producto.veces_vendido += cantidad
+        return True
+    return False
